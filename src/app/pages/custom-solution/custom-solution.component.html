@@ -1,0 +1,39 @@
+<div class="row">
+  <div class="col-sm-12">
+    <nb-card>
+      <nb-card-body>
+        <div class="form-group row">
+          <textarea [(ngModel)]="functionString" 
+            [style.color]="isSuccesful ? 'white' : 'red'" 
+            rows="12" 
+            nbInput fullWidth shape="round" placeholder="Enter the init function and generator 
+//Sample
+n = 4,
+---
+function* combinations(pos = 0, k = 3, n = 4, index = 0, arr = []) {
+  if (pos === k) {
+    yield arr.slice();
+    return;
+  }
+
+  for (let i = index; i < n; i++) {
+    arr[pos] = i;
+    combinations(pos + 1, k, n, i + 1, arr);
+  }
+}"></textarea>
+        </div>
+        <div class="form-group row">
+          <button type="button" class="btn btn-primary" (click)="setFunctionInit()">
+            Submit
+          </button>
+        </div>
+      </nb-card-body>
+    </nb-card>
+  </div>
+</div>
+<div class="row">
+  <bd-gameboard class="col-sm-7"></bd-gameboard>
+  <bd-animation-velocity class="col-sm-2"></bd-animation-velocity>
+  <bd-debugger class="col-sm-3"></bd-debugger>
+</div>
+

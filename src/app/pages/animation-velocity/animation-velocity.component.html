@@ -1,0 +1,14 @@
+<nb-card class="list-card" size="medium">
+  <nb-card-header>
+    Velocity
+  </nb-card-header>
+  <nb-card-body>
+    <nb-radio-group [(ngModel)]="speed">
+      <nb-radio [value]="1" selected>Very Fast</nb-radio>
+      <nb-radio [value]="2">Fast</nb-radio>
+      <nb-radio [value]="3">Half</nb-radio>
+      <nb-radio [value]="4">Slow</nb-radio>
+      <nb-radio [value]="5">Very Slow</nb-radio>
+    </nb-radio-group>
+  </nb-card-body>
+</nb-card>
