@@ -30,7 +30,7 @@ export class CustomSolutionComponent extends GameboardComponent {
       let letters = Array.from(Array(this.variables['n']), (val, index) => index + 1);
       letters = this.arrayDiffService.chunk(letters, environment.chunkSize);
       this.setLettersData([
-        ...letters
+        ...letters,
       ]);
       const generatorAndValues = this.customSolutionService.getFunction(generatorAndVariables.generator);
       eval('this.act = function* ' + generatorAndValues.params + ' { ' + generatorAndValues.generator);

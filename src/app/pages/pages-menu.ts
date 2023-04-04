@@ -4,7 +4,7 @@ export const MENU_ITEMS: NbMenuItem[] = [
   {
     title: 'Custom-Solution',
     icon: 'nb-compose',
-    link: '/pages/custom-solution'
+    link: '/pages/custom-solution',
   },
   {
     title: 'BACKTRACK SOLUTIONS',
@@ -20,8 +20,12 @@ export const MENU_ITEMS: NbMenuItem[] = [
       },
       {
         title: 'Groupings',
-        link: '/pages/puzzle-games/groupings'
-      }
+        link: '/pages/puzzle-games/groupings',
+      },
+      {
+        title: 'Recursive Staircase',
+        link: '/pages/puzzle-games/stairs',
+      },
     ],
-  }
+  },
 ];

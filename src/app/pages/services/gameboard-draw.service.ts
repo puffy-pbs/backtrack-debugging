@@ -1,9 +1,9 @@
-import { Injectable, Renderer2, ElementRef } from '@angular/core';
-import { Observable, range, from } from 'rxjs';
-import { map, tap, mergeMap } from 'rxjs/operators';
-import { DrawSquareService } from './draw-square.service';
-import { GameboardConfig } from '../../@core/interfaces/gameboard-config';
-import { Board } from '../../@core/models/board';
+import {ElementRef, Injectable, Renderer2} from '@angular/core';
+import {from, Observable, range} from 'rxjs';
+import {map, mergeMap, tap} from 'rxjs/operators';
+import {DrawSquareService} from './draw-square.service';
+import {GameboardConfig} from '../../@core/interfaces/gameboard-config';
+import {Board} from '../../@core/models/board';
 
 @Injectable({
   providedIn: 'root'
@@ -46,7 +46,7 @@ export class GameboardDrawService {
   public drawBoard(height: string = '500px', width: string = '500px'): void {
     const boards = [
       new Board('bgCanvas', '0px', '0px'),
-      new Board('topCanvas', height, width)
+      new Board('topCanvas', height, width),
     ];
 
     from(boards)
@@ -85,9 +85,9 @@ export class GameboardDrawService {
     const height = this._gameboardConfig.width * this._gameboardConfig.rows;
     this.columnsObservable.subscribe(() => {
       this._drawsService.strokeRect(
-        x, 
-        this._gameboardConfig.y, 
-        this._gameboardConfig.width, 
+        x,
+        this._gameboardConfig.y,
+        this._gameboardConfig.width,
         height);
       x += this._gameboardConfig.width;
     });
@@ -98,9 +98,9 @@ export class GameboardDrawService {
     let height = this._gameboardConfig.width;
     this.rowsObservable.subscribe(() => {
       this._drawsService.strokeRect(
-        this._gameboardConfig.x, 
-        this._gameboardConfig.y, 
-        width, 
+        this._gameboardConfig.x,
+        this._gameboardConfig.y,
+        width,
         height);
       height += this._gameboardConfig.width;
     });
@@ -128,7 +128,7 @@ export class GameboardDrawService {
 
     this.rowsObservable.pipe(
       mergeMap(i => this.columnsObservable.pipe(
-        map(j => [i, j])
+        map(j => [i, j]),
       )),
       tap(pair => {
         const row = pair[0];
@@ -139,9 +139,9 @@ export class GameboardDrawService {
         } else {
           x += this._gameboardConfig.width;
         }
-      })
-    ).
-    subscribe(pair => {
+      }),
+    )
+    .subscribe(pair => {
       const row = pair[0];
       const col = pair[1];
       const letter = (this._gameboardConfig.letters[row][col] != null) ? this._gameboardConfig.letters[row][col] : '';
@@ -152,7 +152,7 @@ export class GameboardDrawService {
   }
 
   public translate(nextWord: string[]): string {
-    const word = nextWord.reduce((accumulator, currentValue) => {
+    return nextWord.reduce((accumulator, currentValue) => {
       const separatorPos = currentValue.indexOf(',');
       if (separatorPos !== -1) {
         const row = +currentValue.substr(0, separatorPos);
@@ -161,7 +161,5 @@ export class GameboardDrawService {
       }
       return accumulator;
     }, '');
-
-    return word;
   }
 }

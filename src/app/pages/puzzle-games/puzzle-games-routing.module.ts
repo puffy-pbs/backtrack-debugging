@@ -4,6 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { PuzzleGamesComponent } from './puzzle-games.component';
 import { LexicaComponent } from './lexica/lexica.component';
 import { GroupingsComponent } from './groupings/groupings.component';
+import {StairsComponent} from './stairs/stairs.component';
 
 const routes: Routes = [{
   path: '',
@@ -15,8 +16,12 @@ const routes: Routes = [{
     },
     {
       path: 'groupings',
-      component: GroupingsComponent
-    }
+      component: GroupingsComponent,
+    },
+    {
+      path: 'stairs',
+      component: StairsComponent,
+    },
   ],
 }];
 
@@ -30,5 +35,6 @@ export class PuzzleGamesRoutingModule {
 export const ROUTED_COMPONENTS = [
   PuzzleGamesComponent,
   LexicaComponent,
-  GroupingsComponent
+  GroupingsComponent,
+  StairsComponent,
 ];

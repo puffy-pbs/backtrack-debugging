@@ -12,7 +12,7 @@ const COMPONENTS = [
 
 // services
 const SERVICES = [
-  CustomSolutionService
+  CustomSolutionService,
 ];
 
 // modules
@@ -20,7 +20,7 @@ const MODULES = [
   ThemeModule,
   NbListModule,
   PuzzleGamesModule,
-  NbDialogModule.forChild()
+  NbDialogModule.forChild(),
 ];
 
 @NgModule({

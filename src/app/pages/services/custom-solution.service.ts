@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class CustomSolutionService {
 
@@ -18,16 +18,17 @@ export class CustomSolutionService {
     const generator = functionString.substr(delimiterPos + delimiter.length).trim();
     return {
       functionInit: functionInit,
-      generator: generator
+      generator: generator,
     };
   }
 
   public getVariables(variablesStr: string): string[][] {
-    const variablesStrAsArray = variablesStr.split(',');
+    const variablesStrAsArray = variablesStr.split('\n');
     const variables: string[][] = [];
     const buffer = [];
     const separator = '=';
-    for (const variableStr of variablesStrAsArray) {
+    for (let variableStr of variablesStrAsArray) {
+      variableStr = variableStr.replace(/,$/, '');
       const pos = variableStr.indexOf(separator);
       const variable = variableStr.substr(0, pos).trim();
       if (!variable) {
@@ -71,7 +72,7 @@ export class CustomSolutionService {
 
     return {
       'generator': generatorFnc,
-      'params': parameters
+      'params': parameters,
     };
   }
 }

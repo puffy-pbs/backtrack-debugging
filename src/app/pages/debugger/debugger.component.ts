@@ -4,7 +4,7 @@ import { DebuggerData } from '../../@core/models/debugger-data';
 @Component({
   selector: 'bd-debugger',
   templateUrl: './debugger.component.html',
-  styleUrls: ['./debugger.component.scss']
+  styleUrls: ['./debugger.component.scss'],
 })
 export class DebuggerComponent {
   @Input() public debugData: DebuggerData[] = [];

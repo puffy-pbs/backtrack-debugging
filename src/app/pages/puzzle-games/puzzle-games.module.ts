@@ -9,31 +9,33 @@ import { DebuggerComponent } from '../debugger/debugger.component';
 import { NbListModule } from '@nebular/theme';
 import { GroupingsComponent } from './groupings/groupings.component';
 import { AnimationVelocityComponent } from '../animation-velocity/animation-velocity.component';
+import { StairsComponent } from './stairs/stairs.component';
 
 // services
 // TO DO
 const COMPONENTS = [
   LexicaComponent,
   GroupingsComponent,
+  StairsComponent,
   GameboardComponent,
   DebuggerComponent,
-  AnimationVelocityComponent
+  AnimationVelocityComponent,
 ];
 
 const MODULES = [
   ThemeModule,
   NbListModule,
-  PuzzleGamesRoutingModule
+  PuzzleGamesRoutingModule,
 ];
 
 @NgModule({
   imports: [
-    ...MODULES
+    ...MODULES,
   ],
   declarations: [
     ...COMPONENTS,
     ...ROUTED_COMPONENTS,
   ],
-  exports: COMPONENTS
+  exports: COMPONENTS,
 })
 export class PuzzleGamesModule { }

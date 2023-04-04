@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ArrayDiffService {
   private getDiff(arr1: any[], arr2: any[]): any[] {
@@ -20,18 +20,17 @@ export class ArrayDiffService {
     return arr;
   }
 
-  public arrayDifference(arr1: any[], arr2: any[]): any[] {
-    const diff = this.getDiff(arr1, arr2);
-    return diff;
+  arrayDifference(arr1: any[], arr2: any[]): any[] {
+    return this.getDiff(arr1, arr2);
   }
 
-  public chunk(arr: number[], size: number): any[] {
+  chunk(arr: number[], size: number): any[] {
     if (!arr.length || Array.isArray(arr[0])) {
       return arr;
     }
 
     let pos = 0;
-    let resultArr = Array(Math.floor(arr.length / size));
+    const resultArr = Array(Math.floor(arr.length / size));
     resultArr[pos] = [];
     for (let i = 0; i < arr.length; i++) {
       if (i > 0 && i % size === 0) {
@@ -43,5 +42,4 @@ export class ArrayDiffService {
 
     return resultArr;
   }
-  
 }

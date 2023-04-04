@@ -25,7 +25,7 @@ export class GroupingsComponent extends GameboardComponent implements OnInit, Af
   public ngOnInit(): void {
     const letters = [
       [...this.men],
-      [...this.women]
+      [...this.women],
     ];
     this.setLettersData(letters);
     this.setUsedArray();
@@ -47,7 +47,7 @@ export class GroupingsComponent extends GameboardComponent implements OnInit, Af
 
   private groupCouples(): void {
     const generatorGroupsObservable = from(this.group(0, 0));
-    
+
     generatorGroupsObservable
       .pipe(
         startWith([]),
@@ -74,7 +74,7 @@ export class GroupingsComponent extends GameboardComponent implements OnInit, Af
       });
   }
 
-  private * group(manIndex: number, womanIndex: number): IterableIterator<string[]> {
+  private *group(manIndex: number, womanIndex: number): IterableIterator<string[]> {
     const halfGroup = this.k / 2;
     let typeOfGroup;
     let position;

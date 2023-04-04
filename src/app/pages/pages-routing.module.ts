@@ -10,18 +10,18 @@ const routes: Routes = [{
   children: [
     {
       path: 'custom-solution',
-      component: CustomSolutionComponent
+      component: CustomSolutionComponent,
     },
     {
       path: 'puzzle-games',
-      loadChildren: './puzzle-games/puzzle-games.module#PuzzleGamesModule'
+      loadChildren: './puzzle-games/puzzle-games.module#PuzzleGamesModule',
     },
     {
       path: '',
       redirectTo: 'puzzle-games',
       pathMatch: 'full',
-    }
-  ]
+    },
+  ],
 }];
 
 @NgModule({

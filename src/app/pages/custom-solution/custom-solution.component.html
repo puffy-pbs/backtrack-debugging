@@ -3,14 +3,14 @@
     <nb-card>
       <nb-card-body>
         <div class="form-group row">
-          <textarea [(ngModel)]="functionString" 
-            [style.color]="isSuccesful ? 'white' : 'red'" 
-            rows="12" 
-            nbInput fullWidth shape="round" placeholder="Enter the init function and generator 
+          <textarea [(ngModel)]="functionString"
+            [style.color]="isSuccesful ? 'white' : 'red'"
+            rows="12"
+            nbInput fullWidth shape="round" placeholder="Enter the init function and generator
 //Sample
-n = 4,
+n = 5,
 ---
-function* combinations(pos = 0, k = 3, n = 4, index = 0, arr = []) {
+function* combinations(pos = 0, k = 3, n = 5, index = 0, arr = []) {
   if (pos === k) {
     yield arr.slice();
     return;

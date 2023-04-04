@@ -13,7 +13,7 @@ const PAGES_COMPONENTS = [
   imports: [
     PagesRoutingModule,
     ThemeModule,
-    CustomSolutionModule
+    CustomSolutionModule,
   ],
   declarations: [
     ...PAGES_COMPONENTS,
