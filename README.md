@@ -13,6 +13,8 @@ Web app which focuses on people learning or keen on recursion. The web app is pr
 Live Demo: https://backtrack-debugging.web.app/#/pages/puzzle-games/lexica
 
 # Custom Solutions Examples
+Just copy and paste any of the gists below in "Custom-Solution" section to see it go :)
+
 https://gist.github.com/puffy-pbs/0285ad26eb1eab256cf969648e2ebf14 - Generates combinations (n = 5, k = 3)
 
 https://gist.github.com/puffy-pbs/ae42fd42d2155d87c5f35cdd1012abd0 - Prints the numbers in asc order first and after that in descending
